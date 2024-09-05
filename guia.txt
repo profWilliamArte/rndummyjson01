@@ -1,0 +1,59 @@
+1) npx create-expo-app@latest .
+    npm run web o npm start
+    Control c para salir
+
+limpiar proyecto
+2) npm run reset-project
+    npm run web o npm start
+     Control c para salir
+     borrar
+        -- todos lo que esta dentro de components
+        -- las carpetas hooks y scripts
+        eliminamos la linea 7 del package.jon
+           "reset-project": "node ./scripts/reset-project.js",
+        Cambiar a jsx los tsx que esta dentro de app
+    probar que todo este bien
+        -- npm run web o npm start
+        
+3) establecer el thema 
+   agregar el los estilos css para los botones genericos como los de bootstrap en Colors.ts 
+
+
+4) crear las carpeta components en la raiz
+    agregar el CustomButton para usarlo momo molde para los botones configurables
+ 
+
+
+
+Crear el apk
+
+1) npm i -g eas-cli
+   verificar con
+
+      eas whoami
+
+   o sino estan logeados
+
+      eas login
+
+    crear  el archivo ease.json 
+      touch eas.json
+
+    modificar el archivo eas.json 
+
+    {
+    "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "android": {
+        "buildType": "apk"
+      }
+    }
+  }
+}
+
+crear el apk
+    eas build -p android --profile preview
